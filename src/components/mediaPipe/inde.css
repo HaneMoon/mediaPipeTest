@@ -1,0 +1,66 @@
+/* src/App.css */
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #f0f2f5;
+  color: #333;
+}
+
+.App {
+  text-align: center;
+  padding: 20px;
+  background-color: #fff;
+  margin: 20px auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 900px; /* ビデオの最大幅に合わせる */
+}
+
+h1 {
+  color: #2c3e50;
+  margin-bottom: 20px;
+}
+
+.video-container {
+  position: relative;
+  width: 100%;
+  max-width: 800px; /* 適切なビデオの最大幅 */
+  margin: 20px auto;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.input-video {
+  /* ビデオ要素は非表示にして、Canvasに描画 */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* ビデオのアスペクト比を維持しつつコンテナを埋める */
+  z-index: 1;
+}
+
+.output-canvas {
+  position: relative;
+  width: 100%;
+  height: auto; /* ビデオのアスペクト比に合わせて高さを自動調整 */
+  display: block; /* 余白をなくす */
+  z-index: 2;
+}
+
+.permission-message, .note {
+  color: #555;
+  margin-top: 20px;
+}
+
+.error-message {
+  color: #e74c3c;
+  font-weight: bold;
+}
