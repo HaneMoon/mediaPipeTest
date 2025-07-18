@@ -29,30 +29,37 @@ h1 {
 .video-container {
   position: relative;
   width: 100%;
-  max-width: 800px; /* 適切なビデオの最大幅 */
+  max-width: 800px; /* 適当な最大幅。これは残しておく */
   margin: 20px auto;
   border: 2px solid #ddd;
   border-radius: 8px;
   overflow: hidden;
+
+  height: 0; /* これを0にする */
+  padding-bottom: 75%; 
 }
 
 .input-video {
-  /* ビデオ要素は非表示にして、Canvasに描画 */
+  /* position: absolute; はそのまま */
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
-  object-fit: cover; /* ビデオのアスペクト比を維持しつつコンテナを埋める */
+  height: 100%; /* 親要素(video-container)の100%になる */
+  object-fit: cover;
   z-index: 1;
+  /* border: 2px solid green; */ /* デバッグ用に一時的にボーダーを入れても良い */
 }
 
 .output-canvas {
-  position: relative;
+  position: absolute; /* Canvasも同じようにabsoluteにする */
+  top: 0;
+  left: 0;
   width: 100%;
-  height: auto; /* ビデオのアスペクト比に合わせて高さを自動調整 */
-  display: block; /* 余白をなくす */
-  z-index: 2;
+  height: 100%; /* 親要素の100%になる */
+  display: block;
+  z-index: 2; /* ビデオの上に重なるように */
+  /* border: 2px solid blue; */ /* デバッグ用に一時的にボーダーを入れても良い */
 }
 
 .permission-message, .note {
